@@ -59,9 +59,9 @@ void setup() {
     }
 
     // Turn on LED to indicate firmware booted.
-    gpio_init(PICO_DEFAULT_LED_PIN);
-    gpio_set_dir(PICO_DEFAULT_LED_PIN, GPIO_OUT);
-    gpio_put(PICO_DEFAULT_LED_PIN, 1);
+    gpio_init(25);
+    gpio_set_dir(25, GPIO_OUT);
+    gpio_put(25, 1);
 
     // Create array of input sources to be used.
     static InputSource *input_sources[] = { matrix_input };
