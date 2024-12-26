@@ -24,33 +24,33 @@ size_t backend_count;
 KeyboardMode *current_kb_mode = nullptr;
 
 GpioButtonMapping button_mappings[] = {
-    {&InputState::l,            5 },
-    { &InputState::left,        4 },
-    { &InputState::down,        3 },
-    { &InputState::right,       2 },
+    {&InputState::l,            18 },
+    { &InputState::left,        19 },
+    { &InputState::down,        20 },
+    { &InputState::right,       21 },
 
-    { &InputState::mod_x,       6 },
-    { &InputState::mod_y,       7 },
+    { &InputState::mod_x,       2 },
+    { &InputState::mod_y,       16 },
 
-    { &InputState::select,      10},
-    { &InputState::start,       0 },
-    { &InputState::home,        11},
+    { &InputState::select,      27 },
+    { &InputState::start,       28 },
+    { &InputState::home,        23 },
 
-    { &InputState::c_left,      13},
-    { &InputState::c_up,        12},
+    { &InputState::c_left,      12},
+    { &InputState::c_up,        10},
     { &InputState::c_down,      15},
-    { &InputState::a,           14},
-    { &InputState::c_right,     16},
+    { &InputState::a,           13},
+    { &InputState::c_right,     9},
 
-    { &InputState::b,           26},
-    { &InputState::x,           21},
-    { &InputState::z,           19},
-    { &InputState::up,          17},
+    { &InputState::b,           5},
+    { &InputState::x,           6},
+    { &InputState::z,           7},
+    { &InputState::up,          8},
 
-    { &InputState::r,           27},
-    { &InputState::y,           22},
-    { &InputState::lightshield, 20},
-    { &InputState::midshield,   18},
+    { &InputState::r,           4},
+    { &InputState::y,           3},
+    { &InputState::lightshield, 1},
+    { &InputState::midshield,   0},
 };
 size_t button_count = sizeof(button_mappings) / sizeof(GpioButtonMapping);
 
@@ -75,9 +75,9 @@ void setup() {
     }
 
     // Turn on LED to indicate firmware booted.
-    gpio_init(PICO_DEFAULT_LED_PIN);
-    gpio_set_dir(PICO_DEFAULT_LED_PIN, GPIO_OUT);
-    gpio_put(PICO_DEFAULT_LED_PIN, 1);
+    gpio_init(25);
+    gpio_set_dir(25, GPIO_OUT);
+    gpio_put(25, 1);
 
     // Create array of input sources to be used.
     static InputSource *input_sources[] = { gpio_input };
